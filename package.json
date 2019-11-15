@@ -1,5 +1,5 @@
 {
-  "name": "@eklingen/vinyl-stream-imageming",
+  "name": "@eklingen/vinyl-stream-imagemin",
   "version": "1.0.0",
   "description": "Small vinyl-stream wrapper -aka Gulp plugin- for imagemin.",
   "repository": {
