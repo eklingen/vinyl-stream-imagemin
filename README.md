@@ -1,7 +1,7 @@
 
 # Small vinyl-stream wrapper -aka Gulp plugin- for imagemin
 
-Run imagemin within your streams. Lazy loads plugins.
+Run imagemin within your streams. Lazy loads plugins. This comes with quite a few subdependencies to download or compile the binaries. If "just optimize .png, .jpg and .svg" is good enough, take a look at ["@eklingen/vinyl-stream-optimize-images"](https://www.npmjs.com/package/@eklingen/vinyl-stream-optimize-images). That one comes with batteries included.
 
 > *NOTE:* No tests have been written yet!
 
@@ -11,7 +11,7 @@ Run imagemin within your streams. Lazy loads plugins.
 
 ## Usage
 
-```
+```javascript
 const imageminWrapper = require('@eklingen/vinyl-stream-imagemin')
 stream.pipe(imageminWrapper())
 ```
@@ -24,7 +24,7 @@ There are a few options you can play with:
 
 What plugins you intend to use. Possible options are `jpegoptim`, `optipng` and `svgo`. You can pass either `true` or a configuration object.
 
-```
+```javascript
 imageminWrapper({
   plugins: {
     jpegoptim: true,
@@ -34,7 +34,7 @@ imageminWrapper({
 })
 ```
 
-```
+```javascript
 imageminWrapper({
   plugins: {
     jpegoptim: { ... },
@@ -48,12 +48,11 @@ imageminWrapper({
 
 Set this to `true` if you want the plugin to emit only changed files back into the stream.
 
-```
+```javascript
 imageminWrapper({
   swallowUnchanged: true
 })
 ```
-
 
 ## Dependencies
 
